@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cards-moving-time: 0.6s;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: rgb(232, 55, 40);
+    --bs-tooltip-color: white;
+    font-weight: 500;
+}
+
+.form-info-container {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+
+    width: 50rem;
+    min-height: 28.125rem;
+}
+
+button.btn {
+    --bs-btn-font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.social-media-container li {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+}
+
+input {
+    outline: 0 !important;
+}
+
+button[type="submit"] {
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 0;
+
+    background-image: linear-gradient(to right, rgb(230 76 52), rgb(235 30 27));
+}
+
+.button-overlay {
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button-overlay:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#showSignIn,
+#showSignUp {
+    transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out;
+}
+
+#showSignIn:hover,
+#showSignUp:hover {
+    background-color: white;
+    color: rgb(232, 55, 40) !important;
+}
+
+/* Input Cards Animation Section */
+.move-input-cards-right {
+    animation: move-input-cards-right var(--cards-moving-time) ease-in-out forwards;
+}
+
+.move-input-cards-left {
+    animation: move-input-cards-left var(--cards-moving-time) ease-in-out forwards;
+}
+
+.sign-up-form-container {
+    opacity: 0;
+    z-index: -1;
+}
+
+.sign-in-form-container {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hidden-input-card {
+    animation: hide-input-card calc(var(--cards-moving-time) / 2) ease-in-out forwards;
+}
+
+.active-input-card {
+    animation: active-input-card calc(var(--cards-moving-time) / 2) ease-in-out forwards;
+}
+
+@keyframes hide-input-card {
+    0% {
+        opacity: 1;
+        z-index: 1;
+    }
+    99% {
+        opacity: 1;
+        z-index: 1; 
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes active-input-card {
+    0% {
+        opacity: 0;
+        z-index: -1;
+    }
+    99% {
+        opacity: 0;
+        z-index: -1;
+    }
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes move-input-cards-right {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+@keyframes move-input-cards-left {
+    0% {
+        left: 50%;
+    }
+    100% {
+        left: 0;
+    }
+}
+/* Input Cards Animation Section End */
+
+/* Info Cards Animation Section */
+.info-cards-container {
+    left: 50%;
+    z-index: 3;
+    background-image: linear-gradient(to right, rgb(230 76 52), rgb(235 30 27));
+    transition: left 0.5s ease-in-out;
+}
+
+.sign-in-info,
+.sign-up-info {
+    transition: left 0.6s ease-in-out,
+                right 0.6s ease-in-out;
+}
+
+.move-info-cards-left {
+    animation: move-info-cards-left 0.6s ease-in-out forwards;
+}
+
+.move-info-cards-right {
+    animation: move-info-cards-right 0.6s ease-in-out forwards;
+}
+
+.hidden-sign-in-info-card {
+    right: 100%;
+}
+
+.active-sign-in-info-card {
+    right: 0;
+}
+
+.hidden-sign-up-info-card {
+    left: 100%;
+}
+
+.active-sign-up-info-card {
+    left: 0;
+}
+
+@keyframes move-info-cards-left {
+    0% {
+        left: 50%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes move-info-cards-right {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%;
+    }
+}
+/* Info Cards Animation Section End*/
+
+@media (max-width: 767px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 430px) {
+    html {
+        font-size: 12px;
+    }
+}

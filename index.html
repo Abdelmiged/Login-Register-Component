@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/images/animal-track.ico">
+    <title>Zoology</title>
+</head>
+<body>
+    <main class="vh-100 overflow-x-hidden">
+        <div class="container h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="form-info-container shadow-lg rounded-4 position-relative">
+                    <div class="forms-container position-absolute w-50 h-100">
+                        <div class="sign-in-form-container position-absolute w-100 h-100 d-flex align-items-center">
+                            <form class="sign-in-form w-100 px-4 py-4 d-flex flex-column justify-content-center align-items-center">
+                                <h2 class="fs-1 fw-bold mb-4">Sign in</h2>
+                                <div class="social-media-container mb-3">
+                                    <ul class="p-0 list-unstyled d-flex justify-content-center align-items-center">
+                                        <a class="text-black text-decoration-none" href="https://www.facebook.com"><li class="mx-2 rounded-circle border-1 border-dark-subtle border-"><i class="fa-brands fa-facebook-f"></i></li></a>
+                                        <a class="text-black text-decoration-none" href="https://www.twitter.com"><li class="mx-2 rounded-circle border-1 border-dark-subtle border-"><i class="fa-brands fa-twitter"></i></li></a>
+                                        <a class="text-black text-decoration-none" href="https://www.instagram.com"><li class="mx-2 rounded-circle border-1 border-dark-subtle border-"><i class="fa-brands fa-instagram"></i></li></a>
+                                    </ul>
+                                </div>
+                                <input class="w-100 mb-3 p-2 rounded-1 border-0 bg-secondary-subtle" type="email" id="emailInputSignIn" placeholder="Email" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Email is not correct" data-bs-trigger="manual" data-bs-custom-class="custom-tooltip">
+                                <input class="w-100 mb-3 p-2 rounded-1 border-0 bg-secondary-subtle" type="password" id="passwordInputSignIn" placeholder="Password" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Password is not correct" data-bs-trigger="manual" data-bs-custom-class="custom-tooltip">
+                                <button id="signInButton" type="submit" class="btn border-1 rounded-pill text-uppercase text-white border-white fw-bold"><div class="button-overlay px-5 py-2 rounded-pill">sign in</div></button>
+                            </form>
+                        </div>
+                        <div class="sign-up-form-container position-absolute w-100 h-100 d-flex align-items-center">
+                            <form class="sign-up-form w-100 px-4 py-4 d-flex flex-column justify-content-center align-items-center">
+                                <h2 class="fs-1 fw-bold mb-4">Create Account</h2>
+                                <div class="social-media-container mb-3">
+                                    <ul class="p-0 list-unstyled d-flex justify-content-center align-items-center">
+                                        <a class="text-black text-decoration-none" href="https://www.facebook.com"><li class="mx-2 rounded-circle border-1 border-dark-subtle border-"><i class="fa-brands fa-facebook-f"></i></li></a>
+                                        <a class="text-black text-decoration-none" href="https://www.twitter.com"><li class="mx-2 rounded-circle border-1 border-dark-subtle border-"><i class="fa-brands fa-twitter"></i></li></a>
+                                        <a class="text-black text-decoration-none" href="https://www.instagram.com"><li class="mx-2 rounded-circle border-1 border-dark-subtle border-"><i class="fa-brands fa-instagram"></i></li></a>
+                                    </ul>
+                                </div>
+                                <input class="w-100 mb-3 p-2 rounded-1 border-0 bg-secondary-subtle" type="text" id="nameInput" placeholder="Name" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Name cannot be empty" data-bs-trigger="manual" data-bs-custom-class="custom-tooltip">
+                                <input class="w-100 mb-3 p-2 rounded-1 border-0 bg-secondary-subtle" type="email" id="emailInputSignUp" placeholder="Email" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ex: example@google.com" data-bs-trigger="manual" data-bs-custom-class="custom-tooltip">
+                                <input class="w-100 mb-3 p-2 rounded-1 border-0 bg-secondary-subtle" type="password" id="passwordInputSignUp" placeholder="Password" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="password should contain at least one number, one letter and one symbol" data-bs-trigger="manual" data-bs-custom-class="custom-tooltip">
+                                <button id="signUpButton" type="submit" class="btn border-1 rounded-pill text-uppercase text-white border-white fw-bold"><div class="button-overlay px-5 py-2 rounded-pill">sign up</div></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="info-cards-container position-absolute w-50 h-100 rounded-end-4 overflow-hidden">
+                        <div class="sign-in-info position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center px-4 py-4 text-center end-100">
+                            <h2 class="mb-3 text-white fw-bolder">Welcome Back!</h2>
+                            <p class="text-white mb-4">To keep connected with us please login with your presonal info</p>
+                            <button id="showSignIn" class="btn border-1 rounded-pill px-5 py-2 text-uppercase text-white border-white fw-bold">sign in</button>
+                        </div>
+                        <div class="sign-up-info position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center px-4 py-4 text-center active-sign-up-info-card start-0">
+                            <h2 class="mb-3 text-white fw-bolder">Hello, Friend!</h2>
+                            <p class="text-white mb-4">Enter your personal details and start your journey with us</p>
+                            <button id="showSignUp" class="btn border-1 rounded-pill px-5 py-2 text-uppercase text-white border-white fw-bold">sign up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./assets/js/script.js"></script>
+</body>
+</html>
