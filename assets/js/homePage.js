@@ -2,11 +2,14 @@ let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 let logoutBtn = document.getElementById("logoutButton");
 var loadingScreen = document.querySelector(".loading-screen");
 
-document.querySelector("h1").textContent = `Welcome ${currentUser.name} to Zoology.`;
+if(currentUser)
+    document.querySelector("h1").textContent = `Welcome ${currentUser.name} to Zoology.`;
+else
+    document.querySelector("h1").textContent = `Welcome to Zoology.`;
 
 logoutBtn.addEventListener("click", function() {
-    open("../../index.html");
-    close();
+    sessionStorage.clear();
+    history.back();
 });
 
 initiateWebsiteLoading();

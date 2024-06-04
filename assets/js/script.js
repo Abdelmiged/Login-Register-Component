@@ -74,8 +74,7 @@ function signIn(e) {
     passwordInputSignIn.value = "";
 
     sessionStorage.setItem("currentUser", JSON.stringify({name: credentials.name, data: credentials.data}));
-    open("../../assets/pages/home.html");
-    close();
+    window.location.href = `${window.location.origin}/assets/pages/home.html`;
 }
 
 function signUp(e) {
