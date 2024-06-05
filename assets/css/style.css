@@ -149,7 +149,8 @@ button[type="submit"] {
     left: 50%;
     z-index: 3;
     background-image: linear-gradient(to right, rgb(230 76 52), rgb(235 30 27));
-    transition: left 0.5s ease-in-out;
+    transition: left 0.5s ease-in-out,
+                border-radius 0.5s ease-in-out;
 }
 
 .sign-in-info,

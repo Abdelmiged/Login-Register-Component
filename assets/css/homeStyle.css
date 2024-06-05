@@ -4,6 +4,162 @@
     box-sizing: border-box;
 }
 
+.custom-tooltip {
+    --bs-tooltip-bg: rgb(232, 55, 40);
+    --bs-tooltip-color: white;
+    font-weight: 500;
+}
+
+input,
+textarea {
+    outline: 0 !important;
+}
+
+button[type="submit"] {
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 0;
+
+    background-image: linear-gradient(to right, rgb(230 76 52), rgb(235 30 27));
+}
+
+/* Add Card Form */
+.add-card-form {
+    background-color: rgb(207 209 212);
+    bottom: 30px;
+    transform: translateX(-63px);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.move-form-up {
+    animation: move-form-up 0.5s ease-in-out forwards;
+}
+
+.move-form-down {
+    animation: move-form-down 0.5s ease-in-out forwards;
+}
+
+@keyframes move-form-up {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+        bottom: 30px;
+    }
+    100% {
+        pointer-events: all;
+        opacity: 1;
+        bottom: 100px;
+    }
+}
+
+@keyframes move-form-down {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+        bottom: 100px;
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+        bottom: 30px;
+    }
+}
+/* Add Card Form End */
+
+/* Floating Options Bar */
+#floatingOptionsBar {
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 13.625rem;
+    height: 2rem;
+    background-color: red;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+    background-color: rgb(220 220 220);
+    z-index: 2;
+}
+
+.grid-options {
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 4rem;
+    height: 2rem;
+    background-color: yellow;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    background-color: rgb(220 220 220);
+    opacity: 0;
+}
+
+.triangle-bottom {
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin: auto;
+    width: 1.3rem;
+    height: 1.3rem;
+    transform: rotate(45deg);
+    background-color: rgb(220 220 220);
+    z-index: -1;
+}
+
+.move-grid-options-up {
+    animation: move-grid-options-up 0.5s ease-in-out forwards;
+}
+
+.move-grid-options-down {
+    animation: move-grid-options-down 0.5s ease-in-out forwards;
+}
+
+@keyframes move-grid-options-up {
+    0% {
+        opacity: 0;
+        bottom: 30px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 80px;
+    }
+}
+
+@keyframes move-grid-options-down {
+    0% {
+        opacity: 1;
+        bottom: 80px;
+    }
+    100% {
+        opacity: 0;
+        bottom: 30px;
+    }
+}
+
+#floatingOptionsBar div {
+    cursor: pointer;
+}
+
+#floatingOptionsBar i,
+.grid-options i {
+    color: rgb(232, 55, 40);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+#floatingOptionsBar i:hover,
+.grid-options i:hover {
+    color: rgb(10 61 213);
+}
+/* Floating Options Bar End */
+
 /* Loading Screen */
 .loading-screen {
     z-index: 99999;
@@ -88,28 +244,37 @@ h1 {
     min-height: 12.5rem;
 }
 
-.card-separator {
-    width: 90%;
-    height: 4px;
-    background-image: linear-gradient(to right, rgb(230, 76, 52), rgb(235, 30, 27));
-    margin: auto;
-}
-
 .animal-card img {
     width: 13rem;
 }
 
-#logoutButton {
+.animal-card .info {
+    outline: 2px solid rgb(232, 55, 40);
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
+#deleteCardButton {
     --bs-btn-padding-x: 0;
     --bs-btn-padding-y: 0;
 
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
     background-image: linear-gradient(to right, rgb(230 76 52), rgb(235 30 27));
     transition: all 0.5s ease-in-out;
     height: 2.5rem;
     width: 7rem;
+}
+
+#addCardButton,
+#gridLayoutButton,
+#logoutButton,
+#singleColumnGridButton,
+#multiColumnGridButton,
+#submitCardButton {
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 0;
+    --bs-border-width: 0;
+    border-style: none;
+    outline: 0;
 }
 
 .button-overlay {
@@ -127,5 +292,11 @@ h1 {
     .animal-card img {
         width: 100%;
         max-width: 100%;
+    }
+}
+
+@media (max-width: 370px) {
+    html {
+        font-size: 13px;
     }
 }

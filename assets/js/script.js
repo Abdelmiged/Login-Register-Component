@@ -70,11 +70,15 @@ function signIn(e) {
         return;
     }
 
+    sessionStorage.setItem("currentUser", JSON.stringify({email: emailInputSignIn.value, name: credentials.name, password: credentials.password, data: credentials.data}));
+
     emailInputSignIn.value = "";
     passwordInputSignIn.value = "";
 
-    sessionStorage.setItem("currentUser", JSON.stringify({name: credentials.name, data: credentials.data}));
     window.location.href = `${window.location.origin}/${window.location.pathname}/assets/pages/home.html`;
+    
+    // for local testing
+    // window.location.href = `${window.location.origin}/assets/pages/home.html`;
 }
 
 function signUp(e) {
@@ -110,7 +114,7 @@ function signUp(e) {
         return;
     }
 
-    localStorage.setItem(emailInputSignUp.value, JSON.stringify({name: nameInput.value, password: passwordInputSignUp.value}));
+    localStorage.setItem(emailInputSignUp.value, JSON.stringify({name: nameInput.value, password: passwordInputSignUp.value, data: ""}));
     nameInput.value = "";
     emailInputSignUp.value = "";
     passwordInputSignUp.value = "";

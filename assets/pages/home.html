@@ -19,7 +19,60 @@
     <!-- ========== End Loading Screen ========== -->
     
     <h1 class="fs-1 text-center w-50 mx-auto my-5"></h1>
-    <button id="logoutButton" class="btn border-1 rounded-2 text-uppercase text-white border-white fw-bold"><div class="button-overlay px-2 py-2">logout</div></button>
-    <script type="module" src="../js/homePage.js"></script>
+
+    <!-- ========== Floating Options Bar ========== -->
+    <div class="grid-options position-fixed">
+        <span class="triangle-bottom position-absolute"></span>
+        <button id="singleColumnGridButton" class="btn border-1 rounded-2 text-uppercase text-white border-white fw-bold" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Single Column Grid" data-bs-custom-class="custom-tooltip" data-bs-trigger="hover">
+            <i class="fa-solid fa-grip-lines"></i>
+        </button>
+        <button id="multiColumnGridButton" class="btn border-1 rounded-2 text-uppercase text-white border-white fw-bold" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Multi Column Grid" data-bs-custom-class="custom-tooltip" data-bs-trigger="hover">
+            <i class="fa-solid fa-grip-lines-vertical"></i>
+        </button>
+    </div>
+    
+    <div id="floatingOptionsBar" class="position-fixed shadow-lg">
+        <div class="add-card">
+            <button id="addCardButton" class="btn border-1 rounded-2 text-uppercase text-white border-white fw-bold" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add Card" data-bs-custom-class="custom-tooltip" data-bs-trigger="hover">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="grid-layout">
+            <button id="gridLayoutButton" class="btn border-1 rounded-2 text-uppercase text-white border-white fw-bold" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Grid Layout" data-bs-custom-class="custom-tooltip" data-bs-trigger="hover">
+                <i class="fa-solid fa-grip"></i>
+            </button>
+        </div>
+        <div class="logout">
+            <button id="logoutButton" class="btn border-1 rounded-2 text-uppercase text-white border-white fw-bold" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Logout" data-bs-custom-class="custom-tooltip" data-bs-trigger="hover">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+    <!-- ========== Floating Options Bar End ========== -->
+
+    <!-- ========== Add Card Form ========== -->
+    <form class="add-card-form position-fixed rounded-2 w-50 px-4 py-4 start-0 end-0 m-auto shadow-lg d-flex flex-column justify-content-center align-items-center">
+        <input class="w-100 mb-3 p-2 rounded-1 border-0 bg-secondary-subtle" type="text" id="animalNameInput" placeholder="Animal Name" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Animal Name cannot be empty" data-bs-trigger="manual" data-bs-custom-class="custom-tooltip">
+        <input class="w-100 mb-3 p-2 rounded-1 border-0 bg-secondary-subtle" type="text" id="animalImageInput" placeholder="Animal Image Link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Animal Image Link cannot be empty" data-bs-trigger="manual" data-bs-custom-class="custom-tooltip">
+        <textarea class="w-100 mb-3 p-2 rounded-1 border-0 bg-secondary-subtle" name="animal-description" id="animalDescriptionInput" cols="30" rows="5" placeholder="Animal Description" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Animal Description cannot be empty" data-bs-trigger="manual" data-bs-custom-class="custom-tooltip" resize></textarea>
+        <button id="submitCardButton" type="submit" class="btn border-1 rounded-pill text-uppercase text-white border-white fw-bold"><div class="button-overlay px-5 py-2 rounded-pill">Submit</div></button>
+    </form>
+    <!-- ========== Add Card Form End ========== -->
+
+    <!-- ========== Main Content ========== -->
+    <main class="mb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="cards-container shadow-lg rounded-2">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ========== Main Content End ========== -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/homePage.js"></script>
 </body>
 </html>
